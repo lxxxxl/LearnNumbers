@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Learn Numbers</string>
+    <string name="up">Up</string>
+    <string name="down">Down</string>
+    <string name="speak">Speak</string>
+    <string name="random">Random</string>
+    <string name="space">0</string>
+
+</resources>
