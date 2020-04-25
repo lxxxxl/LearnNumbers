@@ -1,12 +1,12 @@
 # LearnNumbers
 Android app for teaching children numbers  
   
-## App allows:  
-* Teach children for units, tens and hundrens  
+## App allows  
+* Teach children for units, tens and hundreds  
 * Speak specified number  
 * Generate random number for studying  
   
-## TODO:  
+## TODO  
 * Add UI resizing to work correctly with various screen resolutions  
   
 ## Screenshots
