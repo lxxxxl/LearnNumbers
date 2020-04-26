@@ -1,117 +1,24 @@
 package ru.lxx.LearnNumbers
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.speech.tts.TextToSpeech
-import android.view.View
-import android.widget.ImageView
-import android.widget.TextView
-import android.widget.Toast
-import java.util.*
+import com.google.android.material.floatingactionbutton.FloatingActionButton
+import com.google.android.material.snackbar.Snackbar
+import com.google.android.material.tabs.TabLayout
+import androidx.viewpager.widget.ViewPager
+import androidx.appcompat.app.AppCompatActivity
+import android.view.Menu
+import android.view.MenuItem
+import ru.lxx.LearnNumbers.ui.main.SectionsPagerAdapter
 
-@Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
-
-    private val numbers: Array<String> = arrayOf(" ", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0")
-
-    lateinit var mTTS: TextToSpeech
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-
-        val textView_num1: TextView = findViewById(R.id.textView_num1)
-        val textView_num2: TextView = findViewById(R.id.textView_num2)
-        val textView_num3: TextView = findViewById(R.id.textView_num3)
-
-        textView_num1.text = this.numbers[0]
-        textView_num2.text = this.numbers[0]
-        textView_num3.text = this.numbers[0]
-
-        // Setup Up/Down nums logic
-        val imageView_num1_up: ImageView = findViewById(R.id.imageView_num1_up)
-        imageView_num1_up.setOnClickListener {
-            this.numUp(textView = textView_num1)
-        }
-        val imageView_num1_down: ImageView = findViewById(R.id.imageView_num1_down)
-        imageView_num1_down.setOnClickListener {
-            this.numDown(textView = textView_num1)
-        }
-
-        val imageView_num2_up: ImageView = findViewById(R.id.imageView_num2_up)
-        imageView_num2_up.setOnClickListener {
-            this.numUp(textView = textView_num2)
-        }
-        val imageView_num2_down: ImageView = findViewById(R.id.imageView_num2_down)
-        imageView_num2_down.setOnClickListener {
-            this.numDown(textView = textView_num2)
-        }
-
-        val imageView_num3_up: ImageView = findViewById(R.id.imageView_num3_up)
-        imageView_num3_up.setOnClickListener {
-            this.numUp(textView = textView_num3)
-        }
-        val imageView_num3_down: ImageView = findViewById(R.id.imageView_num3_down)
-        imageView_num3_down.setOnClickListener {
-            this.numDown(textView = textView_num3)
-        }
-
-        // Setup Text To Speech engine
-        mTTS = TextToSpeech(applicationContext, TextToSpeech.OnInitListener { status ->
-            if (status != TextToSpeech.ERROR){
-                //if there is no error then set language
-                mTTS.language = Locale.getDefault()
-            }
-            else{
-                Toast.makeText(this, "Cannot initialise TTS engine", Toast.LENGTH_SHORT).show()
-            }
-        })
-
-        // Setup Text To Speech button
-        val imageView_tts: ImageView = findViewById(R.id.imageView_tts)
-        imageView_tts.setOnClickListener{
-            val toSpeak = "%s%s%s".format(textView_num3.text, textView_num2.text, textView_num1.text)
-            Toast.makeText(this, "Speaking $toSpeak", Toast.LENGTH_SHORT).show()
-            if (!mTTS.isSpeaking) {
-                mTTS.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null)
-            }
-        }
-
-        // Setup random number generator
-        val imageView_random: ImageView = findViewById(R.id.imageView_random)
-        imageView_random.setOnClickListener{
-            textView_num1.text = this.numbers[(1 until this.numbers.size-1).random()]
-            textView_num2.text = this.numbers[(1 until this.numbers.size-1).random()]
-            textView_num3.text = this.numbers[0]
-        }
-
-    }
-
-    private fun numUp(textView: TextView){
-        val currentNum = textView.text
-        val currentIndex = this.numbers.indexOf(currentNum)
-        var nextIndex = 0
-        if (currentIndex < this.numbers.size-1)
-            nextIndex = currentIndex + 1
-        textView.setText(this.numbers[nextIndex])
-    }
-
-    private fun numDown(textView: TextView){
-        val currentNum = textView.text
-        val currentIndex = this.numbers.indexOf(currentNum)
-        var nextIndex = this.numbers.size-1
-        if (currentIndex > 0)
-            nextIndex = currentIndex - 1
-        textView.text = this.numbers[nextIndex]
-    }
-
-    override fun onPause() {
-        if (mTTS.isSpeaking){
-            //if speaking then stop
-            mTTS.stop()
-        }
-        super.onPause()
+        setContentView(R.layout.activity_main_tabbed)
+        val sectionsPagerAdapter = SectionsPagerAdapter(this, supportFragmentManager)
+        val viewPager: ViewPager = findViewById(R.id.view_pager)
+        viewPager.adapter = sectionsPagerAdapter
+        val tabs: TabLayout = findViewById(R.id.tabs)
+        tabs.setupWithViewPager(viewPager)
     }
 }
-
-

@@ -5,5 +5,8 @@
     <string name="speak">Speak</string>
     <string name="random">Random</string>
     <string name="space">0</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="tab_text_1">Numbers</string>
+    <string name="tab_text_2">Time</string>
 
 </resources>
