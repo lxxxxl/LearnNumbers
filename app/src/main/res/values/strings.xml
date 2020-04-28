@@ -8,5 +8,6 @@
     <string name="title_activity_main">MainActivity</string>
     <string name="tab_text_1">Numbers</string>
     <string name="tab_text_2">Time</string>
+    <string name="tab_text_3">Clock</string>
 
 </resources>
