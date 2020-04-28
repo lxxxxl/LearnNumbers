@@ -1,5 +1,7 @@
 # Learn Numbers
 Android app for teaching children numbers  
+
+APK file can be downloaded [here](https://github.com/lxxxxl/LearnNumbers/blob/master/release/LearnNumbers-3.apk?raw=true)  
   
 ## App allows  
 * Teach children for units, tens and hundreds  
