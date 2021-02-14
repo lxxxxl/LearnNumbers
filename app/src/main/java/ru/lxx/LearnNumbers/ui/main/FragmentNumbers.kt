@@ -89,7 +89,7 @@ class FragmentNumbers : Fragment() {
         // Setup Text To Speech button
         val imageView_tts: ImageView = root.findViewById(R.id.imageView_tts)
         imageView_tts.setOnClickListener{
-            val toSpeak = "%s%s%s".format(textView_num3.text, textView_num2.text, textView_num1.text)
+            val toSpeak = "%s%s%s".format(textView_num3.text, textView_num2.text, textView_num1.text).replace(" ","")
             Toast.makeText(activity?.applicationContext, "Speaking $toSpeak", Toast.LENGTH_SHORT).show()
             if (!mTTS.isSpeaking) {
                 mTTS.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null)
