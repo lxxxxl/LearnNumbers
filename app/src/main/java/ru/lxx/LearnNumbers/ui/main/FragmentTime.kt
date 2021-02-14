@@ -56,7 +56,6 @@ class FragmentTime : Fragment() {
         val imageView_tts: ImageView = root.findViewById(R.id.imageView_tts2)
         imageView_tts.setOnClickListener{
             val toSpeak = (textView_time.text as String).replace(':', ' ')
-            Toast.makeText(activity?.applicationContext, "Speaking $toSpeak", Toast.LENGTH_SHORT).show()
             if (!mTTS.isSpeaking) {
                 mTTS.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null)
             }
