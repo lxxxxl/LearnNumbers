@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
-import android.widget.TextView
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProviders
@@ -81,10 +80,10 @@ class FragmentAnalogClock : Fragment() {
         // Setup random number generator
         val imageView_random: ImageView = root.findViewById(R.id.imageView_random3)
         imageView_random.setOnClickListener{
-            val calendar = Calendar.getInstance()
-            calendar.add(Calendar.HOUR, (0 until 12).random())
-            calendar.add(Calendar.MINUTE, (0 until 59).random())
-            vectorAnalogClock.setCalendar(calendar)
+            val _calendar = Calendar.getInstance()
+            _calendar.add(Calendar.HOUR, (0 until 12).random())
+            _calendar.add(Calendar.MINUTE, (0 until 59).random())
+            vectorAnalogClock.setCalendar(_calendar)
         }
         return root
     }
