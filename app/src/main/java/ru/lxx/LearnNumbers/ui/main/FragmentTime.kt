@@ -23,6 +23,7 @@ class FragmentTime : Fragment() {
 
     private lateinit var pageViewModel: PageViewModel
     lateinit var mTTS: TextToSpeech
+    lateinit var toSpeak: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,7 +56,6 @@ class FragmentTime : Fragment() {
         // Setup Text To Speech button
         val imageView_tts: ImageView = root.findViewById(R.id.imageView_tts2)
         imageView_tts.setOnClickListener{
-            val toSpeak = (textView_time.text as String).replace(':', ' ')
             if (!mTTS.isSpeaking) {
                 mTTS.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null)
             }
@@ -72,6 +72,7 @@ class FragmentTime : Fragment() {
     private fun randomTime(): String{
         val hours: Int = (0 until 23).random()
         val mins: Int = (0 until 59).random()
+        toSpeak = resources.getQuantityString(R.plurals.hours, hours, hours) + " " + resources.getQuantityString(R.plurals.minutes, mins, mins)
         return "%d:%02d".format(hours, mins)
     }
 

@@ -71,7 +71,9 @@ class FragmentAnalogClock : Fragment() {
         val imageView_tts: ImageView = root.findViewById(R.id.imageView_tts3)
         imageView_tts.setOnClickListener{
             vectorAnalogClock.calendar.get(Calendar.HOUR)
-            val toSpeak = "%d %d".format(vectorAnalogClock.calendar.get(Calendar.HOUR), vectorAnalogClock.calendar.get(Calendar.MINUTE))
+            val hours = vectorAnalogClock.calendar.get(Calendar.HOUR)
+            val mins = vectorAnalogClock.calendar.get(Calendar.MINUTE)
+            val toSpeak = resources.getQuantityString(R.plurals.hours, hours, hours) + " " + resources.getQuantityString(R.plurals.minutes, mins, mins)
             if (!mTTS.isSpeaking) {
                 mTTS.speak(toSpeak, TextToSpeech.QUEUE_FLUSH, null)
             }
