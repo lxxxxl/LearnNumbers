@@ -43,8 +43,8 @@ class FragmentNumbers : Fragment() {
         val textView_num2: TextView = root.findViewById(R.id.textView_num2)
         val textView_num3: TextView = root.findViewById(R.id.textView_num3)
 
-        textView_num1.text = this.numbers[0]
-        textView_num2.text = this.numbers[0]
+        textView_num1.text = this.numbers[(1 until this.numbers.size-1).random()]
+        textView_num2.text = this.numbers[(1 until this.numbers.size-1).random()]
         textView_num3.text = this.numbers[0]
 
         // Setup Up/Down nums logic
