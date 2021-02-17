@@ -98,9 +98,12 @@ class FragmentNumbers : Fragment() {
         // Setup random number generator
         val imageView_random: ImageView = root.findViewById(R.id.imageView_random)
         imageView_random.setOnClickListener{
-            textView_num1.text = this.numbers[(1 until this.numbers.size-1).random()]
-            textView_num2.text = this.numbers[(1 until this.numbers.size-1).random()]
-            textView_num3.text = this.numbers[0]
+            if (textView_num1.text != this.numbers[0])
+                textView_num1.text = this.numbers[(1 until this.numbers.size-1).random()]
+            if (textView_num2.text != this.numbers[0])
+                textView_num2.text = this.numbers[(1 until this.numbers.size-1).random()]
+            if (textView_num3.text != this.numbers[0])
+                textView_num3.text = this.numbers[(1 until this.numbers.size-1).random()]
         }
         return root
     }
