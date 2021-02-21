@@ -6,111 +6,104 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <TextView
-        android:id="@+id/textView_num1"
+    <TableLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="16dp"
-        android:text="@string/space"
-        android:textSize="200sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
-
-    <ImageView
-        android:id="@+id/imageView_num1_up"
-        android:layout_width="113dp"
-        android:layout_height="84dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:contentDescription="@string/up"
-        android:scaleType="fitXY"
-        app:layout_constraintBottom_toTopOf="@+id/textView_num1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:srcCompat="@android:drawable/arrow_up_float" />
-
-    <ImageView
-        android:id="@+id/imageView_num1_down"
-        android:layout_width="113dp"
-        android:layout_height="84dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:contentDescription="@string/down"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView_num1"
-        app:srcCompat="@android:drawable/arrow_down_float" />
-
-    <TextView
-        android:id="@+id/textView_num2"
-        android:layout_width="wrap_content"
-        android:layout_height="272dp"
-        android:text="@string/space"
-        android:textSize="200sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView_num1"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
-
-    <TextView
-        android:id="@+id/textView_num3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/space"
-        android:textSize="200sp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/textView_num2"
-        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.34" />
+        app:layout_constraintVertical_bias="0.35000002">
 
-    <ImageView
-        android:id="@+id/imageView_num2_up"
-        android:layout_width="112dp"
-        android:layout_height="84dp"
-        android:contentDescription="@string/up"
-        app:layout_constraintBottom_toTopOf="@+id/textView_num2"
-        app:layout_constraintEnd_toStartOf="@+id/imageView_num1_up"
-        app:srcCompat="@android:drawable/arrow_up_float" />
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/imageView_num3_up"
-        android:layout_width="112dp"
-        android:layout_height="84dp"
-        android:contentDescription="@string/up"
-        app:layout_constraintBottom_toTopOf="@+id/textView_num3"
-        app:layout_constraintEnd_toStartOf="@+id/imageView_num2_up"
-        app:srcCompat="@android:drawable/arrow_up_float" />
+            <ImageView
+                android:id="@+id/imageView_num3_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/up"
+                app:srcCompat="@drawable/arrow_up" />
 
-    <ImageView
-        android:id="@+id/imageView_num2_down"
-        android:layout_width="112dp"
-        android:layout_height="84dp"
-        android:contentDescription="@string/down"
-        app:layout_constraintEnd_toStartOf="@+id/imageView_num1_down"
-        app:layout_constraintTop_toBottomOf="@+id/textView_num2"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+            <ImageView
+                android:id="@+id/imageView_num2_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/up"
+                app:srcCompat="@drawable/arrow_up" />
 
-    <ImageView
-        android:id="@+id/imageView_num3_down"
-        android:layout_width="112dp"
-        android:layout_height="84dp"
-        android:layout_marginTop="270dp"
-        android:contentDescription="@string/down"
-        app:layout_constraintEnd_toStartOf="@+id/imageView_num2_down"
-        app:layout_constraintTop_toTopOf="@+id/textView_num3"
-        app:srcCompat="@android:drawable/arrow_down_float" />
+            <ImageView
+                android:id="@+id/imageView_num1_up"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/up"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/arrow_up" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/textView_num3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/space"
+                android:textSize="200sp" />
+
+            <TextView
+                android:id="@+id/textView_num2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/space"
+                android:textSize="200sp" />
+
+            <TextView
+                android:id="@+id/textView_num1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/space"
+                android:textSize="200sp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/imageView_num3_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/down"
+                app:srcCompat="@drawable/arrow_down" />
+
+            <ImageView
+                android:id="@+id/imageView_num2_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/down"
+                app:srcCompat="@drawable/arrow_down" />
+
+            <ImageView
+                android:id="@+id/imageView_num1_down"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="@string/down"
+                app:srcCompat="@drawable/arrow_down" />
+        </TableRow>
+
+    </TableLayout>
 
     <ImageView
         android:id="@+id/imageView_tts"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="40dp"
         android:contentDescription="@string/speak"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.186"
+        app:layout_constraintHorizontal_bias="0.2"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_btn_speak_now" />
 
@@ -118,11 +111,10 @@
         android:id="@+id/imageView_random"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_marginBottom="40dp"
         android:contentDescription="@string/random"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.836"
+        app:layout_constraintHorizontal_bias="0.8"
         app:layout_constraintStart_toStartOf="parent"
         app:srcCompat="@android:drawable/ic_menu_rotate" />
 
