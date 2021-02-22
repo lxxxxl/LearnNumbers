@@ -32,13 +32,10 @@ jobs:
 
       - name: Run tests and build release artifacts
         run: |
-          ./gradlew test
           ./gradlew assembleRelease --stacktrace
-          ./gradlew bundleRelease
 
       - name: Upload signed APK
         uses: actions/upload-artifact@v2
         with:
           name: app-release.apk
           path: app/build/outputs/apk/release/app-release.apk
-          
