@@ -1,7 +1,7 @@
 # Learn Numbers
 Android app for teaching children numbers  
 
-APK file can be downloaded [here](https://github.com/lxxxxl/LearnNumbers/blob/master/release/LearnNumbers-5.apk?raw=true)
+APK file can be downloaded in [releases](https://github.com/lxxxxl/LearnNumbers/releases) section
   
 ## App allows  
 * Teach children for units, tens and hundreds  
@@ -21,15 +21,3 @@ App uses [VectorAnalogClock](https://github.com/TurkiTAK/vector-analog-clock) An
 ![Screenshot 2](https://github.com/lxxxxl/LearnNumbers/blob/master/screenshots/5.jpg?raw=true)
 ![Screenshot 3](https://github.com/lxxxxl/LearnNumbers/blob/master/screenshots/6.jpg?raw=true)
 ![Screenshot 4](https://github.com/lxxxxl/LearnNumbers/blob/master/screenshots/7.jpg?raw=true)
-
-## Changelog
-### 3.1
-* Removed spaces when saying numbers
-* Removed not needed toasts
-* Calendar fix
-* Russian plurals in hours and minutes
-
-### 3.2
-* Fixed number randomizer
-* Disabled screen rotation
-* Added UI resizing to work correctly with various screen resolutions
