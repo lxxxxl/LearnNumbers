@@ -32,13 +32,19 @@ jobs:
 
       - name: Run tests and build release artifacts
         run: |
-          ./gradlew test
           ./gradlew assembleRelease --stacktrace
-          ./gradlew bundleRelease
 
       - name: Upload signed APK
         uses: actions/upload-artifact@v2
         with:
-          name: app-release.apk
+          name: LearnNumbers-release.apk
           path: app/build/outputs/apk/release/app-release.apk
           
+          
+      - name: Generate release
+        uses: actions/upload-release-asset@v1.0.1
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: LearnNumbers-release.apk
+          asset_name: LearnNumbers-release.apk
+          asset_content_type: application/zip
